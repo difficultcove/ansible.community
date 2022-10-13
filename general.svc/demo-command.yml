@@ -1,0 +1,9 @@
+- name: Demo Ansible Command
+  hosts: all
+  tasks:
+    - name: Return motd to registered var
+      ansible.builtin.command: cat /etc/motd
+      register: mymotd
+    - name: Display MOTD
+      debug: 
+        msg: "{{ mymotd.stdout }}"

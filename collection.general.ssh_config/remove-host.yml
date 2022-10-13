@@ -1,0 +1,7 @@
+- name: Remove Host from ssh config
+  hosts: all
+  tasks:
+  - name: Delete a host from the configuration
+    community.general.ssh_config:
+      host: "example.com"
+      state: absent
